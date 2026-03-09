@@ -3,9 +3,9 @@ pipeline {
 
     environment {
         // Jenkins credentials ID for Docker Hub (configure in Jenkins)
-        DOCKERHUB_CREDENTIALS = 'dockerhub-creds'
+        DOCKERHUB_CREDENTIALS = 'docker_token'
         // Full image name on Docker Hub – change this to your own
-        IMAGE_NAME = 'your-dockerhub-username/sum-product_fx'
+        IMAGE_NAME = 'sorinoraibi575675/sum-product_fx'
     }
 
     stages {
