@@ -18,10 +18,11 @@ pipeline {
         stage('Build Maven JAR') {
             steps {
                 script {
+                    def mvnHome = tool 'M3'  // name from Jenkins Maven installations
                     if (isUnix()) {
-                        sh 'mvn clean package -DskipTests'
+                        sh "${mvnHome}/bin/mvn clean package -DskipTests"
                     } else {
-                        bat 'mvn clean package -DskipTests'
+                        bat "\"${mvnHome}\\bin\\mvn\" clean package -DskipTests"
                     }
                 }
             }
